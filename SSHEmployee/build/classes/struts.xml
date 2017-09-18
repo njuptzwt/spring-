@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+<!-- 部门的操作对象 -->
+<package name="Department" namespace="/Department" extends="struts-default">
+<action name="Department_*" class="DepartmentAction" method="{1}">
+<result name="findAll">/Department/findAll2.jsp</result>
+<result name="input">/index.jsp</result>
+<result name="add_success" type="chain">Department_findAll</result>
+<result name="delete_success" type="chain">Department_findAll</result>
+<result name="find_byid">/Department/update.jsp</result>
+<result name="modify_success" type="chain">Department_findAll</result>
+<allowed-methods>findAll,delete,add,modify,FindByid,Update</allowed-methods>
+</action>
+</package>
+
+<!-- 员工的Action操作，Struts的action操作和springMVC的Controller操作很像 -->
+
+<package name="Employee" namespace="/Employee" extends="struts-default">
+<action name="Employee_*" class="EmployeeAction" method="{1}">
+<result name="login_success">/Department/show.jsp</result>
+<result name="input">/index.jsp</result>
+
+<allowed-methods>login</allowed-methods>
+</action>
+</package>
+<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+</struts>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<bean name="person" class="com.imook.spring.Person" depends-on="food">
+<!-- 构造方式注入 -->
+<constructor-arg  value="1"></constructor-arg>
+<constructor-arg value="zheng"></constructor-arg>
+<constructor-arg ><ref bean="food"></ref></constructor-arg>
+</bean>
+<!-- set方式注入 -->
+<!--  <property name="food" ref="food"></property></bean> -->
+<bean name="food" class="com.imook.spring.Food"></bean>
+</beans>
