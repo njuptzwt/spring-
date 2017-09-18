@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<bean class="com.bean.Northman" id="northMan"></bean>
+<bean class="com.bean.Southman" id="southMan"></bean>
+<bean class="com.bean.test" id="test"></bean>
+</beans>
