@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+<package name="default" namespace="/" extends="struts-default">
+<!-- 定义了 -->
+<interceptors>
+<interceptor name="mytimer" class="com.struts.interceptor.TimerInterceptor"></interceptor>
+<interceptor name="logininterceptor" class="com.struts.interceptor.LoginInterceptor"></interceptor>
+</interceptors>
+
+
+<action name="timeraction" class="com.struts.action.TimerAction">
+<interceptor-ref name="defaultStack"></interceptor-ref>
+<interceptor-ref name="mytimer"></interceptor-ref>
+<result name="success">/success.jsp</result>
+</action>
+
+<action name="auth">
+<interceptor-ref name="defaultStack"></interceptor-ref>
+<interceptor-ref name="logininterceptor"></interceptor-ref>
+<result>/WEB-INF/jsp/manager.jsp</result>
+<result name="login">/login.jsp</result>
+</action>
+
+<action name="login" class="com.struts.action.LoginAction" method="login">
+<result>/WEB-INF/jsp/manager.jsp</result>
+<result name="error">/login.jsp</result> </action>
+</package>
+</struts>
