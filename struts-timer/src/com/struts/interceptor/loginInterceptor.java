@@ -5,7 +5,7 @@ import java.util.Map;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
-
+//登陆拦截器设计
 public class loginInterceptor extends AbstractInterceptor {
 
 	@Override
