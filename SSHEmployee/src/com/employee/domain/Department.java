@@ -2,10 +2,10 @@ package com.employee.domain;
 
 import java.util.HashSet;
 import java.util.Set;
-
+//部门员工信息
 public class Department {
-private Integer Did;
-private String Dname;
+private Integer Did;//部门号
+private String Dname;//部门名称
 private String Description;
 private Set<Employee> employeeset=new HashSet<Employee>();//一个部门包含了员工的信息
 
